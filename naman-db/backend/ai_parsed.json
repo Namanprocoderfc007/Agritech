@@ -1,0 +1,14 @@
+{
+  "disease_detected": true,
+  "disease_name": "Disease Detected",
+  "crop_type_detected": "Unknown Crop",
+  "confidence": 0.7,
+  "description": "Analysis was partially truncated by the AI provider, but we extracted the key information.",
+  "urgency_level": "medium",
+  "pest_type": null,
+  "treatment_organic": {},
+  "treatment_chemical": {},
+  "symptoms": [],
+  "causes": [],
+  "parse_error": true
+}

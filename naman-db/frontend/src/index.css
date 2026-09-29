@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a1a1a;
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Background Watermark */
+.bg-watermark {
+  background-color: #f0fdf4; /* Light green tint */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('/leaf.svg');
+  background-repeat: no-repeat;
+  background-size: auto, 400px;
+  background-position: center, center center;
+  background-attachment: fixed;
+}
+
+/* 3D Glassmorphism Card Style */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85); /* More solid white for readability */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-radius: 1rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Dark Mode Overrides */
+.dark .bg-watermark {
+  background-color: #0f172a; /* Deep slate background */
+  background-image: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)), url('/leaf.svg');
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.dark .glass-card h2, .dark .glass-card h3 {
+  color: #f8fafc;
+}
+
+.dark .glass-card p {
+  color: #cbd5e1;
+}
+
+.dark header.glass {
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .bg-white {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+.dark .text-gray-900, .dark .text-gray-800 {
+  color: #f8fafc;
+}
+
+.dark .text-gray-700, .dark .text-gray-600 {
+  color: #cbd5e1;
+}
+
+.dark .text-gray-500 {
+  color: #94a3b8;
+}
+
+.dark .border-gray-200, .dark .border-gray-300 {
+  border-color: #334155;
+}
+
+.dark .bg-gray-50, .dark .bg-gray-100 {
+  background-color: #0f172a;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Chat bubble animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Loading dots animation */
+@keyframes bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+.loading-dot {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.gradient-earth {
+  background: linear-gradient(135deg, #a18072 0%, #846358 100%);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Risk level colors */
+.risk-low {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.risk-medium {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.risk-high {
+  @apply bg-orange-100 text-orange-800 border-orange-200;
+}
+
+.risk-critical {
+  @apply bg-red-100 text-red-800 border-red-200;
+}

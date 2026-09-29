@@ -1,0 +1,17 @@
+{
+  "short_name": "AgriGuard",
+  "name": "AgriGuard",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#16a34a",
+  "background_color": "#ffffff",
+  "description": "AI-Powered Precision Farming & Pest Management App"
+}
